@@ -1,7 +1,7 @@
 const { connectToDatabase } = require("./app/config/database");
 const { ApolloServer, gql } = require("apollo-server-express");
 const express = require("express");
-const mongoose = require("mongoose");
+require("dotenv").config();
 
 const { typeDefs } = require("./typeDefs");
 const { resolvers } = require("./resolvers");
