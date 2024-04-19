@@ -30,4 +30,4 @@ startApolloServer();
 
 //En el terminal: escribir "node server.js" para iniciar el servidor2
 //Una vez iniciado el servidor podemos acceder a él desde:
-//http://localhost:4000/graphql
+//http://localhost:8000/graphql
