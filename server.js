@@ -13,21 +13,22 @@ const server = new ApolloServer({
   resolvers,
 });
 
-async function startApolloServer() {
-  await connectToDatabase();
+async function startApolloServer(typeDefs, resolvers) {
+  const server = new ApolloServer({ typeDefs, resolvers });
   await server.start();
   server.applyMiddleware({ app });
 
-  const PORT = process.env.PORT || 4000;
-  app.listen(PORT, () => {
+  app.listen(process.env.PORT, () => {
     console.log(
-      `Servidor Express con Apollo Server iniciado en el puerto ${PORT}`
+      `Servidor corriendo en http://localhost:${process.env.PORT}${server.graphqlPath})`,
     );
   });
 }
 
-startApolloServer();
+startApolloServer(typeDefs, resolvers);
 
 //En el terminal: escribir "node server.js" para iniciar el servidor2
 //Una vez iniciado el servidor podemos acceder a él desde:
 //http://localhost:8000/graphql
+//En codesandbox:
+//https://w45y2x-8000.csb.app/graphql
