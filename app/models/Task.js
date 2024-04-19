@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
 const taskSchema = new mongoose.Schema({
-  _id: { type: String },
   title: { type: String, required: true },
   description: { type: String },
   status: {
@@ -9,6 +8,7 @@ const taskSchema = new mongoose.Schema({
     enum: ["todo", "in progress", "done"],
     default: "todo",
   },
+  panel: { type: mongoose.Schema.Types.ObjectId, ref: "Panel", required: true },
 });
 
 module.exports = mongoose.model("Task", taskSchema);
