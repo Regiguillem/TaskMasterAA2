@@ -1,0 +1,20 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "En este producto implementaremos un servidor con Node/Express en el que serviremos la información a partir del gestor de bases de datos MongoDB y utilizando la especificación GraphQL para proveer de los argumentos para realizar las “Queries” y los “Mutations” para interactuar con el frontal en el siguiente producto.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^3.13.0",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.8.1",
+    "mongoose": "^8.3.0"
+  }
+}
